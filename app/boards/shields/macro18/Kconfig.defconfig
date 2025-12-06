@@ -1,0 +1,6 @@
+if SHIELD_MACRO18
+
+config ZMK_KEYBOARD_NAME
+    default "Ergo18"
+
+endif
