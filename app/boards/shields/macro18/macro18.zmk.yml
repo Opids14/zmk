@@ -1,0 +1,10 @@
+name: Macro18
+type: board
+controller: nice_nano_v2
+url: https://github.com/Opids14/pad
+description: "18-key macropad"
+features:
+  - keys
+matrix:
+  rows: 3
+  cols: 6
