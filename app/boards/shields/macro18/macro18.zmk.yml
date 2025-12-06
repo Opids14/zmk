@@ -1,10 +1,10 @@
+---
+id: macro18
 name: Macro18
-type: board
-controller: nice_nano_v2
-url: https://github.com/Opids14/pad
-description: "18-key macropad"
+type: shield
 features:
   - keys
-matrix:
-  rows: 3
-  cols: 6
+requires:
+  - nice_nano
+siblings:
+  - macro18

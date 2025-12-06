@@ -1,2 +1,2 @@
 config SHIELD_MACRO18
-    bool "Macro18 Shield"
+    bool "Macro18 Keyboard Shield"

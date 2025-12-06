@@ -1,25 +1,28 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-/ {
+/{
     chosen {
         zmk,kscan = &kscan0;
     };
+};
 
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
+&kscan0 {
+    compatible = "zmk,kscan-gpio-matrix";
+    label = "MACRO18_KSCAN";
 
-        diode-direction = "col2row";
+    row-gpios =
+        <&gpio1 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
+        <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
+        <&gpio0 9  (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
 
-        row-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>,
-                    <&gpio0 11 GPIO_ACTIVE_LOW>,
-                    <&gpio0 9  GPIO_ACTIVE_LOW>;
+    col-gpios =
+        <&gpio1 6  GPIO_ACTIVE_LOW>,
+        <&gpio1 4  GPIO_ACTIVE_LOW>,
+        <&gpio0 11 GPIO_ACTIVE_LOW>,
+        <&gpio1 0  GPIO_ACTIVE_LOW>,
+        <&gpio0 24 GPIO_ACTIVE_LOW>,
+        <&gpio0 22 GPIO_ACTIVE_LOW>;
 
-        col-gpios = <&gpio1 6  GPIO_ACTIVE_LOW>,
-                    <&gpio1 4  GPIO_ACTIVE_LOW>,
-                    <&gpio1 0  GPIO_ACTIVE_LOW>,
-                    <&gpio0 24 GPIO_ACTIVE_LOW>,
-                    <&gpio0 22 GPIO_ACTIVE_LOW>,
-                    <&gpio0 11 GPIO_ACTIVE_LOW>;
-    };
+    drive-strength = <1>;
+    debounce-period-ms = <5>;
 };
